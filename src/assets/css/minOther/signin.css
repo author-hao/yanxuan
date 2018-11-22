@@ -1,0 +1,138 @@
+.signin {
+  width: 100%;
+}
+
+.signin .signin_title {
+  width: 100%;
+  padding-left: rem(26);
+  background: #f6f0e0;
+  padding-top: rem(70);
+}
+
+.signin .signin_title span {
+  display: block;
+  width: rem(100);
+  height: rem(100);
+  line-height: rem(100);
+  border-radius: 50%;
+  font-size: rem(80);
+  color: #404040;
+  text-align: center;
+  background: #fff;
+}
+
+.signin .signin_content {
+  width: 100%;
+  background: #f6f0e0;
+}
+
+.signin .signin_content .signin_num {
+  width: 100%;
+  text-align: center;
+  padding-bottom: rem(164);
+}
+
+.signin .signin_content .signin_num p {
+  padding-top: rem(55);
+  font-size: rem(39);
+  color: #a19a8a;
+}
+
+.signin .signin_content .signin_num h3 {
+  padding-top: rem(82);
+  font-size: rem(67);
+  font-weight: 600;
+  color: #ab9c73;
+}
+
+.signin .signin_content > ul {
+  list-style: none;
+  width: 100%;
+  height: rem(212);
+  padding: 0 rem(12);
+  background: #e4dece;
+  display: flex;
+}
+
+.signin .signin_content > ul > li {
+  width: 14.2%;
+  font-size: rem(34);
+  text-align: center;
+  color: #a69f8f;
+  line-height: rem(100);
+}
+
+.signin .signin_content > ul > li p {
+  border-top: 1px solid #a69f8f;
+  position: relative;
+}
+
+.signin .signin_content > ul > li p::after {
+  display: block;
+  width: rem(28);
+  height: rem(28);
+  content: '';
+  border-radius: 50%;
+  background: #a69f8f;
+  position: absolute;
+  top: rem(-13);
+  left: rem(76);
+}
+
+.signin .signin_content > ul .signed_in {
+  color: #ef5c52;
+}
+
+.signin .signin_content > ul .signed_in p {
+  border-top: 1px solid #ef5c52;
+}
+
+.signin .signin_content > ul .signed_in p::after {
+  background: #ef5c52;
+}
+
+.signin .button {
+  width: 100%;
+  text-align: center;
+  margin-top: rem(90);
+}
+
+.signin .button input[type=button] {
+  height: rem(106);
+  width: rem(510);
+  background: #a59f93;
+  color: #fefcf0;
+  border: 0;
+  border-radius: rem(60);
+  outline: none;
+  font-size: rem(41);
+}
+
+.el-message-box__wrapper {
+  background: transparent;
+}
+
+.el-message-box {
+  width: rem(365);
+  height: rem(365);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.el-message-box__message {
+  text-align: center;
+  color: #fffbf8;
+  font-size: rem(36);
+}
+
+.el-icon-close {
+  visibility: hidden;
+}
+
+.el-message-box__btns {
+  text-align: center;
+}
+
+.el-button--small {
+  margin-top: rem(70);
+  padding: rem(20) rem(30);
+}

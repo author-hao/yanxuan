@@ -1,0 +1,154 @@
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ header, section, footer, img {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+body,
+button,
+input,
+select,
+textarea {
+  font: 12px/1.5tahoma, arial, \5b8b\4f53;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: couriernew, courier, monospace;
+}
+
+small {
+  font-size: 12px;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+legend {
+  color: #000;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html,body {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: #fff;
+}
+html, body, #app {
+  margin:0;
+  padding:0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@function rem($px) {
+  @return $px / 67.5 + rem;
+}
+@import './other/classification.scss'; // 分类
+@import './other/cart.scss';           // 购物车
+@import './other/personalData.scss';   // 个人中心
+
+// minOther
+
+@import './minOther/confirm_order.scss'; // 订单确认
+@import './minOther/classifyDetail.scss'; // 分类详情
+@import './minOther/signin.scss';         // 签到
+@import './minOther/newsite.scss';        // 新增地址
+@import './minOther/orderslist.scss';    // 订单详情
+@import './minOther/bio_balance.scss';   // 余额
+@import './minOther/bio_site.scss';    // 我的地址
+@import './other/details.scss';         // 详情页
+@import './minOther/bargain_detail.scss';   // 砍价详情页
+@import './minOther/theme.scss';       // 精选主题
+@import './minOther/themeDetail.scss';       // 精选主题详情
+@import './minOther/success_order.scss';       // 订单创建完成
+@import './minOther/kanjia_detail.scss';       // 砍价订单
+@import './minOther/sort_detail.scss';   // 分类详情
+@import './minOther/staypayment.scss';   // 待支付
+
+
+

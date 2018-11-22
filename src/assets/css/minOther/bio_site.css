@@ -1,0 +1,95 @@
+.bio_site {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bio_site .site_title {
+  width: 100%;
+  text-align: center;
+  line-height: rem(150);
+  font-size: rem(54);
+  position: relative;
+}
+
+.bio_site .site_title span {
+  position: absolute;
+  left: rem(58);
+}
+
+.bio_site .site_list {
+  width: 100%;
+  flex: 1;
+  overflow: auto;
+}
+
+.bio_site .site_list .site_con {
+  width: 100%;
+}
+
+.bio_site .site_list .site_con dl {
+  width: 100%;
+  font-size: rem(40);
+  display: flex;
+  height: rem(100);
+  line-height: rem(100);
+}
+
+.bio_site .site_list .site_con dl dt {
+  width: 10%;
+  text-align: center;
+}
+
+.bio_site .site_list .site_con dl dt span {
+  display: block;
+  width: rem(60);
+  height: rem(60);
+  margin-top: rem(25);
+  margin-left: rem(40);
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.bio_site .site_list .site_con dl dt span i.default::after {
+  display: block;
+  content: "\2713";
+  font-size: rem(50);
+  width: 100%;
+  height: 100%;
+  color: #e4dada;
+  line-height: rem(60);
+  background: #c72121;
+  border-radius: 50%;
+}
+
+.bio_site .site_list .site_con dl dd {
+  width: 90%;
+  display: flex;
+  padding: 0 rem(50);
+  justify-content: space-between;
+  font-size: rem(40);
+}
+
+.bio_site .site_list .site_con dl dd > p span {
+  margin: 0 rem(20);
+}
+
+.bio_site .site_list .site_con dl dd i {
+  display: block;
+}
+
+.bio_site .set_site {
+  width: 100%;
+  padding: rem(41);
+}
+
+.bio_site .set_site div {
+  width: 100%;
+  text-align: center;
+  font-size: rem(40);
+  line-height: rem(105);
+  border: 1px solid #ccc;
+  border-radius: rem(15);
+  color: blue;
+}

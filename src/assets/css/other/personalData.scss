@@ -1,0 +1,211 @@
+
+.personalData_con {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+.personalData_wapper {
+  width: 100%;
+  flex: 1;
+  overflow: auto;
+.personalData {
+    width: 100%;
+    background: rgb(240, 234, 234);
+    .head_portrait {
+        width: 100%;
+        height: rem(502);
+        background: #c6b692;
+        div  {
+          width: 100%;
+          padding-top: rem(145);
+          padding-left: rem(88);
+          display: flex;
+
+          p {
+            width: rem(218);
+            height: rem(218);
+            border: 1px solid #ccc;
+            border-radius: 50%;
+          }
+          a {
+              font-size: rem(40);
+              margin-top: rem(80);
+              margin-left: rem(50);
+              color: blue;
+          }
+        }
+        dl {
+            width: 100%;
+            padding-top: rem(145);
+            padding-left: rem(88);
+            display: flex;
+            dt {
+                width: rem(218);
+                height: rem(218);
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+            dd {
+                margin-left: rem(40);
+                p {
+                  padding-top: rem(25);
+                    font-size: rem(42);
+                    color: #fffff1;
+                }
+                span {
+                  margin-top:rem(30);
+                  font-size: rem(30);
+                  padding: rem(3) rem(15);
+                  background: #b59f78;
+                  border-radius: rem(5);
+                  color: #f3e9d0;
+                }
+            }
+        }
+    }
+    .broadcast {
+        width: 100%;
+        height: rem(106);
+        background: #fff;
+        > div {
+            div {
+                font-size: rem(36);
+                line-height: rem(106);
+                color: #8c2d31;
+                letter-spacing: 1px;
+                display: flex;
+                i {
+                    margin-left: rem(45);
+                    margin-right: rem(31);
+                    color: #5d484f;
+                }
+                marquee {
+                    margin-right: rem(50);
+                }
+            }
+        }
+    }
+    .hr {
+        width: 100%;
+        height: rem(20);
+    }
+    // 我的订单
+    .order_from {
+        background: rgb(240, 234, 234);
+        h3 {
+          padding-top: rem(38);
+            font-size: rem(40);
+            background: #fff;
+            i {
+                color: #dbc152;
+                margin: 0 rem(18) 0 rem(46);
+            }
+        }
+        > ul {
+            list-style: none;
+            width: 100%;
+            display: flex;
+            padding-top: rem(80);
+            padding-bottom: rem(40);
+            background: #fff;
+            >li {
+                width: 25%;
+                text-align: center;
+                color: #838383;
+                position: relative;
+               a {
+                color: #838383;
+                  > i {
+                      font-size: rem(68);
+                    }
+                  p {
+                      padding-top: rem(18);
+                      font-size: rem(34);
+                    }
+               }
+
+               > span {
+                  font-style: normal;
+                  display: block;
+                  position: absolute;
+                  top: rem(-5);
+                  right: rem(50);
+                  width: rem(55);
+                  height: rem(55);
+                  background: #c11724;
+                  border-radius: 50%;
+                  font-size: rem(30);
+                  line-height: rem(60);
+                  text-align: center;
+                  color: rgb(226, 219, 219);
+
+                }
+
+            }
+
+        }
+        // 余额这的
+        .orders {
+            width: 100%;
+            margin-top: rem(18);
+            background: #fff;
+           > ol {
+                display: flex;
+                flex-wrap: wrap;
+                > li {
+                    width: 33%;
+                    height: rem(230);
+                    text-align: center;
+                    margin-top: rem(80);
+                    a {
+                        display: block;
+
+                    i {
+                        font-size: rem(72);
+                        font-weight: 600;
+                    }
+
+                    .icon-yue, .icon-kanjia {
+                        color: #e98375;
+                    }
+                    .icon-youhuiquan {
+                        color: #faa459;
+                        font-weight: 500;
+                    }
+                    .icon-xingxing {
+                      color: #faa459;
+                    }
+                    .icon-LC_icon_gps_line_1, .icon-kefu {
+                        color: #95b6d7;
+                    }
+                    p {
+                      font-size: rem(34);
+                      margin-top: rem(30);
+                      color: #292526;
+                    }
+                    span {
+                      margin-top:rem(27);
+                        font-size: rem(26);
+                        color: #8b8b8b;
+                    }
+                  }
+                }
+            }
+        }
+        .foot {
+            width: 100%;
+            height: rem(150);
+            text-align: center;
+            font-size: rem(34);
+            color: #959595;
+            padding-top: rem(40);
+        }
+    }
+
+    }
+  }
+}

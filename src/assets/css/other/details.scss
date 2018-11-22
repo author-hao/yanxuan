@@ -1,0 +1,1099 @@
+
+@function rem($px) {
+  @return $px / 67.5 + rem;
+}
+
+.details {
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    .details_title {
+      box-sizing: border-box;
+      width: 100%;
+      height: rem(150);
+      line-height: rem(150);
+      padding: rem(25) rem(26);
+      z-index: 5;
+      background: rgba(0,0,0,0);
+      >span {
+          display: block;
+          width: rem(100);
+          height: rem(100);
+          border-radius: 50%;
+          padding: rem(7);
+          border: 1px solid #f9fffd;
+          i {
+              display: block;
+              width:100%;
+              height: 100%;
+              line-height: rem(85);
+              text-align: center;
+              color: #3d3d3d;
+              border-radius: 100%;
+              background: #f9fffd;
+          }
+      }
+    }
+    // 中间内容
+    .details_warpper {
+        width: 100%;
+        flex:1;
+        overflow: hidden;
+        .details_con {
+            width: 100%;
+            padding-bottom: rem(50);
+            .swiper-container { // 轮播图
+              width: 100%;
+                > ul {
+                    list-style: none;
+                  > li {
+                      width: 100%;
+                      font-size: rem(30);
+                      img {
+                          width: 100%;
+                      }
+                  }
+                }
+            }
+        .details_data_pu { // 商品name
+              width: 100%;
+              box-sizing: border-box;
+              padding: rem(44) 0;
+
+             > h3 {
+                  width: 100%;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                  font-size: rem(45);
+                  color: #313131;
+                  padding: 0 rem(44);
+              }
+             > p {
+                width: 100%;
+                margin-top: rem(21);
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                font-size: rem(39);
+                color: #999999;
+                padding: 0 rem(44);
+              }
+              > ul {
+                  width: 100%;
+                  display: flex;
+                  margin-top: rem(70);
+                  padding: 0 rem(44);
+                  justify-content: space-between;
+                  > li:first-child {
+                      font-size: rem(42);
+                      font-weight: 550;
+                      display: flex;
+                      span:first-child {
+                          color: #a32821;
+                      }
+                      span:last-child {
+                          padding-top: rem(23);
+                          padding-left: rem(30);
+                          color: #9b9b9b;
+                          text-decoration: line-through;
+
+                      }
+                  }
+                 > li:last-child {
+                      color: #959595;
+                      font-size: rem(34);
+                  }
+              }
+              h2 {
+                  height: rem(25);
+                  background: #f0f0ff;
+              }
+              .putong_xuanze {
+                background: #fff;
+                width: 100%;
+                height: rem(131);
+                font-size: rem(34);
+                padding: 0 rem(44);
+                color: #292929;
+                line-height: rem(111);
+                display: flex;
+                justify-content: space-between;
+
+                > span {
+                    display: block;
+                    padding-top: rem(10);
+                    font-size: rem(50);
+                }
+            }
+          }
+
+          .pintuan {
+              width: 100%;
+            .details_data2 { // 商品2name , 开团
+              width: 100%;
+              box-sizing: border-box;
+              padding-top: rem(44);
+             > h3 {
+                  width: 100%;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                  font-size: rem(45);
+                  color: #313131;
+                  padding: 0 rem(44);
+              }
+             > p {
+                width: 100%;
+                padding:0 rem(44);
+                margin-top: rem(21);
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                font-size: rem(39);
+                color: #999999;
+              }
+              > ul {
+                  width: 100%;
+                  display: flex;
+                  height: rem(146);
+                  margin-top: rem(70);
+                  background: #b4272d;
+                  justify-content: space-between;
+                 > li:first-child {
+                    padding-left: rem(36);
+                      display: flex;
+                     > div {
+                          font-size: rem(40);
+                          color: #f8faf9;
+                          line-height: rem(146);
+                          > span {
+                            font-size: rem(42);
+                          }
+                      }
+                      > p {
+                          font-size: rem(34);
+                          font-weight: 200;
+                          margin-left: rem(30);
+                          color: #fafeff;
+                          > span {
+                              display: block;
+                          }
+                          span:first-child {
+                            margin-top: rem(25);
+                          }
+                          span:last-child {
+                              text-decoration: line-through;
+                              margin-top: rem(16);
+                          }
+                      }
+                  }
+                 > li:last-child {
+                      color: #fafeff;
+                      padding-right: rem(26);
+                      font-size: rem(34);
+                      line-height: rem(146);
+                  }
+              }
+          }
+          .hr {
+              width: 100%;
+              height: rem(25);
+              background: #eef8f7;
+          }
+          // 拼团流程
+          .flowpath {
+              width: 100%;
+              >h3 {
+                  width: 100%;
+                  line-height: rem(96);
+                  font-size: rem(40);
+                  padding: 0 rem(35);
+                  border-bottom: 1px solid #ccc;
+              }
+              >ol {
+                  width: 100%;
+                  height: rem(230);
+                  display: flex;
+                  border-bottom: 1px solid #ccc;
+                 > li {
+                      width: 25%;
+                      font-weight: 200;
+                      font-size: rem(29);
+                      text-align: center;
+                      padding: 0 rem(45);
+                      color: #2c2c2c;
+                      padding-top: rem(28);
+                      > i {
+                          font-size: rem(64);
+                      }
+                      > p {
+                        padding-top: rem(18);
+                      }
+                  }
+              }
+              .xuanze {
+                  width: 100%;
+                  height: rem(131);
+                  font-size: rem(34);
+                  padding: 0 rem(10);
+                  color: #292929;
+                  line-height: rem(131);
+                  display: flex;
+                  justify-content: space-between;
+                  > span {
+                      font-size: rem(59);
+                  }
+              }
+          }
+
+          }
+          .content_detail {
+              width: 100%;
+              height: rem(140);
+              margin-top: rem(40);
+              >ul {
+                  list-style: none;
+                  display: flex;
+                  > li {
+                      font-size: rem(40);
+                      width: 50%;
+                      text-align: center;
+                      line-height: rem(140);
+                  }
+                  .active {
+                    border-bottom: 2px solid #a72d2a;
+                    color: #ab2327;
+                 }
+              }
+          }
+
+          #detailContent {
+              width: 100%;
+              padding: rem(13);
+              box-sizing: border-box;
+              font-size: rem(30);
+              #recommend {
+              	 div {
+              	 	p {
+              	 		img {
+			                  font-size: rem(30);
+			                  display: block;
+			                  width:100% !important;
+			                  height: auto !important;
+			                  box-sizing: border-box;
+			                  margin:-1px 0;
+			              }
+              	 	}
+              	 }
+              }
+              
+              .m-attrList, .list-paddingleft-2 {
+                  overflow: hiddle;
+                  padding: rem(30) 0;
+                  li {
+                      p {
+                          line-height: rem(100);
+                          display: flex;
+                      }
+                  }
+              }
+          }
+        }
+    }
+
+    // 尾部操作
+    .details_commit {
+        width: 100%;
+        height: rem(138);
+        z-index: 10;
+        margin-bottom: 0px;
+        background: #fff;
+        border-top: 2px solid #dadada;
+        position: absolute;
+        bottom:0;
+       > ul {
+            list-style: none;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            font-size: rem(40);
+            background: #fff;
+            justify-content: space-between;
+            .iocn {
+                margin: 0 rem(42);
+                line-height: rem(138);
+
+                color:#636363;
+                i {
+                  font-size: rem(72);
+                  font-weight: bold;
+                }
+            }
+           > li:nth-child(2) {
+                position: relative;
+                span {
+                    position: absolute;
+                    top: rem(20);
+                    right: rem(-15);
+                    display: block;
+                    width: rem(50);
+                    height: rem(50);
+                    line-height: rem(50);
+                    text-align: center;
+                    font-size: rem(23);
+                    border-radius: 50%;
+                    font-size: rem(30);
+                    background: #b4272d;
+                    color:#feffec;
+                }
+            }
+           > li:nth-child(4) {
+                line-height: rem(138);
+                color: #000;
+            }
+           > .btn {
+                width: rem(312);
+                height: rem(138);
+
+                > button {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    border:0;
+                    outline: none;
+                    background: #b4272d;
+                    color: #fffbff;
+
+                }
+            }
+        }
+    }
+
+    // 开团按钮
+    .kaituanBtn {
+        width: 100%;
+        height: rem(142);
+        background: #fff;
+        z-index: 5;
+        border-top: 1px solid #dedede;
+        >ol {
+            width: 100%;
+            display: flex;
+            list-style: none;
+            justify-content: space-between;
+            height: rem(142);
+            background: #fff;
+            > li {
+                text-align: center;
+            }
+            > li:first-child, li:nth-child(2) {
+
+              line-height: rem(141);
+              color:#636363;
+                i {
+                  font-size: rem(72);
+                  font-weight: bold;
+                  margin: rem(38) rem(41);
+                }
+            }
+            > li:nth-child(3) {
+                font-size: rem(40);
+                width: rem(310);
+                color: #030303;
+                span {
+                    display: block;
+                }
+               > span:first-child {
+                  padding-top: rem(20);
+               }
+            }
+            >li:last-child {
+              font-size: rem(40);
+              width: rem(469);
+              height: 100%;
+              color: #f8fff4;
+              background: #ac2b2f;
+               span {
+                  display: block;
+
+               }
+               span:first-child {
+                  padding-top: rem(20);
+               }
+            }
+
+        }
+    }
+
+   
+/////////////////////////////////////////////////////////////////////
+	 // 拼团立即购买模态框
+    .motai {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 188;
+        background: rgba(0,0,0,.2);
+        animation: motaiK .3s forwards;
+        .motai_list {
+            position: absolute;
+            width: 100%;
+            background: #fff;
+            z-index: 199;
+            bottom: 0;
+            left: 0;
+            .motai_con {
+                    width: 100%;
+                    padding: rem(39);
+                    p:first-child {
+                        width: 100%;
+                        height: rem(60);
+                        span {
+                            display: block;
+                            width: rem(51);
+                            height: rem(51);
+                            border-radius: 50%;
+                            text-align: center;
+                            float: right;
+                            line-height: rem(52);
+                            color: #959595;
+                            border: 1px solid #959595;
+                            font-size: rem(22);
+                        }
+                    }
+                 .shangpin {
+                    width: 100%;
+                    display: flex;
+                   > dt {
+                        width: rem(170);
+                        height: rem(170);
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: rem(10);
+                        }
+                    }
+                   > dd {
+                        padding-left: rem(40);
+                        width: 80%;
+                       > h5 {
+                            width: 100%;
+                            font-size: rem(34);
+                            color: #434343;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+                        > span {
+                            font-size: rem(28);
+                            color: #962320;
+                        }
+                    }
+                }
+                
+                .pin-xuanze {
+                	width: 100%;
+                	>p {
+                      width: 100%;
+                      line-height: rem(94);
+                      font-size: rem(36);
+                      color: #000000;
+                      margin: rem(10) 0;
+                }
+                >ul {
+                    display: flex;
+                    width: 100%;
+                    font-size: rem(34);
+                    >li {
+                        width: rem(394);
+                        line-height: rem(76);
+                        text-align: center;
+                        border-radius: rem(10);
+                        border: 1px solid #dddddd;
+                        margin: 0 rem(13);
+                    }
+
+                    .li {
+                        border: 1px solid #962320;
+                        color: #962320;
+                    }
+                }
+                >ol {
+                  display: flex;
+                  width: 100%;
+                  font-size: rem(34);
+                  flex-wrap: wrap;
+                  >li {
+                      padding: rem(21) rem(37);
+                      border-radius: rem(10);
+                      border: 1px solid #dddddd;
+                      margin:rem(10) rem(13);
+                  }
+
+                  .fuwu {
+                    border: 1px solid #962320;
+                    color: #962320;
+                  }
+                }
+                }
+                .num {
+                    width: 100%;
+                    display: flex;
+                    margin-top: rem(109);
+                    justify-content: space-between;
+                    >dt {
+                        font-size: rem(34);
+                        color: #000;
+                    }
+                    >dd {
+                        display: flex;
+
+                        span {
+                          display: block;
+                          width: rem(114);
+                          height: rem(93);
+                          border: 1px solid #cccccc;
+                          text-align: center;
+                          font-size: rem(35);
+                          font-weight: 700;
+                          font-weight: bold;
+                          line-height: rem(93);
+                      }
+                      span:nth-child(2) {
+                          width: rem(141);
+                      }
+                      span:first-child {
+                          border-right: 0;
+                          border-radius: rem(10) 0 0 rem(8);
+                      }
+                      span:last-child {
+                        border-left: 0;
+                        border-radius:0 rem(8) rem(8) 0;
+                      }
+                        }
+
+                }
+            }
+
+            .mai {
+                width: 100%;
+                height: rem(124);
+                border-top: 1px solid #aca59b;
+                >button {
+                    width: 100%;
+                    height: 100%;
+                    border: 0;
+                    background: #b4272d;
+                    color: #fffefb;
+                    font-size: rem(43);
+                }
+            }
+
+        }
+    }
+
+    // 一键开团模态框
+    .motai2 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 188;
+      background: rgba(0,0,0,.2);
+      animation: motaiK .2s forwards;
+      .motai_list {
+          position: absolute;
+          width: 100%;
+          background: #fff;
+          z-index: 199;
+          bottom: 0;
+          left: 0;
+          .motai_con {
+                  width: 100%;
+                  padding: rem(39);
+                  p:first-child {
+                      width: 100%;
+                      height: rem(60);
+                      span {
+                          display: block;
+                          width: rem(51);
+                          height: rem(51);
+                          border-radius: 50%;
+                          text-align: center;
+                          float: right;
+                          line-height: rem(52);
+                          color: #959595;
+                          border: 1px solid #959595;
+                          font-size: rem(22);
+                      }
+                  }
+               .shangpin {
+                  width: 100%;
+                  display: flex;
+                 > dt {
+                      width: rem(170);
+                      height: rem(170);
+                      img {
+                          width: 100%;
+                          height: 100%;
+                          border-radius: rem(10);
+                      }
+                  }
+                 > dd {
+                      padding-left: rem(40);
+                      width: 80%;
+                     > h5 {
+                          width: 100%;
+                          font-size: rem(34);
+                          color: #434343;
+                          white-space: nowrap;
+                          text-overflow: ellipsis;
+                          overflow: hidden;
+                      }
+                      > span {
+                          font-size: rem(28);
+                          color: #962320;
+                      }
+                  }
+              }
+             .xuanze {
+             		>p {
+	                    width: 100%;
+	                    line-height: rem(94);
+	                    font-size: rem(36);
+	                    color: #000000;
+	                    margin: rem(10) 0;
+	              }
+	              >ul {
+	                  display: flex;
+	                  width: 100%;
+	                  font-size: rem(34);
+	                  >li {
+	                      text-align: center;
+	                      border-radius: rem(10);
+	                      border: 1px solid #dddddd;
+	                      margin: rem(10) rem(13);
+	                      margin: 0 rem(13);
+	                  }
+	                  .li {
+	                      border: 1px solid #962320;
+	                      color: #962320;
+	                  }
+	              }
+	              >ol {
+	                display: flex;
+	                width: 100%;
+	                font-size: rem(34);
+	                flex-wrap: wrap;
+	                >li {
+	                    padding: rem(21) rem(37);
+	                    border-radius: rem(10);
+	                    border: 1px solid #dddddd;
+	                    margin: rem(10) rem(13);
+	                }
+	                .fuwu {
+	                  border: 1px solid #962320;
+	                  color: #962320;
+	                }
+	              }
+             }
+              .num {
+                  width: 100%;
+                  display: flex;
+                  margin-top: rem(109);
+                  justify-content: space-between;
+                  >dt {
+                      font-size: rem(34);
+                      color: #000;
+                  }
+                  >dd {
+                      display: flex;
+
+                      span {
+                        display: block;
+                        width: rem(114);
+                        height: rem(93);
+                        border: 1px solid #cccccc;
+                        text-align: center;
+                        font-size: rem(30);
+                        font-weight: bold;
+                        line-height: rem(93);
+                    }
+                    span:nth-child(2) {
+                        width: rem(141);
+                    }
+                    span:first-child {
+                        border-right: 0;
+                        border-radius: rem(10) 0 0 rem(8);
+                    }
+                    span:last-child {
+                      border-left: 0;
+                      border-radius:0 rem(8) rem(8) 0;
+                    }
+                      }
+
+              }
+          }
+
+          .mai {
+              width: 100%;
+              height: rem(124);
+              border-top: 1px solid #aca59b;
+              >button {
+                  width: 100%;
+                  height: 100%;
+                  border: 0;
+                  background: #b4272d;
+                  color: #fffefb;
+                  font-size: rem(43);
+              }
+          }
+
+      }
+  }
+
+    
+////////////////////////////////////////////////
+
+    // 普通加入购物车
+    .moTai_putong2 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      animation:  motaiK .2s forwards;
+      background: rgba(0,0,0, .3);
+      .general {
+          width: 100%;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background: #fff;
+        .motai_con {
+            width: 100%;
+            padding: rem(41);
+          p:first-child {
+            width: 100%;
+            height: rem(60);
+            span {
+                display: block;
+                width: rem(51);
+                height: rem(51);
+                border-radius: 50%;
+                text-align: center;
+                float: right;
+                line-height: rem(52);
+                color: #959595;
+                border: 1px solid #959595;
+                font-size: rem(22);
+            }
+        }
+     .shangpin {
+        width: 100%;
+        display: flex;
+       > dt {
+            width: rem(170);
+            height: rem(170);
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: rem(10);
+            }
+        }
+       > dd {
+            padding-left: rem(40);
+            width: 80%;
+           > h5 {
+                width: 100%;
+                font-size: rem(34);
+                color: #434343;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            > span {
+                font-size: rem(28);
+                color: #962320;
+            }
+        }
+    }
+    .xuanze2 {
+    	width: 100%;
+    	 >p {
+		      width: 100%;
+		      line-height: rem(94);
+		      font-size: rem(36);
+		      color: #000000;
+		      margin: rem(10) 0;
+		}
+		>ul {
+		    display: flex;
+		    width: 100%;
+		    font-size: rem(34);
+		    >li {
+		        width: rem(394);
+		        line-height: rem(76);
+		        text-align: center;
+		        border-radius: rem(10);
+		        border: 1px solid #dddddd;
+		        margin: 0 rem(13);
+		    }
+		    .ul2 {
+		        border: 1px solid #962320;
+		        color: #962320;
+		    }
+		}
+		>ol {
+		  display: flex;
+		  width: 100%;
+		  font-size: rem(34);
+		  flex-wrap: wrap;
+		  >li {
+		      padding: rem(21) rem(37);
+		      border-radius: rem(10);
+		      border: 1px solid #dddddd;
+		      margin: rem(10) rem(13);
+		  }
+		  .ol2 {
+		    border: 1px solid #962320;
+		    color: #962320;
+		  }
+		}
+    }
+   
+    .num {
+      width: 100%;
+      display: flex;
+      margin-top: rem(109);
+      font-weight: 550;
+      justify-content: space-between;
+      >dt {
+          font-size: rem(34);
+          color: #000;
+      }
+      >dd {
+          display: flex;
+
+          span {
+            display: block;
+            width: rem(114);
+            height: rem(93);
+            border: 1px solid #cccccc;
+            text-align: center;
+            font-size: rem(30);
+            font-weight: bold;
+            line-height: rem(93);
+        }
+        span:nth-child(2) {
+            width: rem(141);
+        }
+        span:first-child {
+            border-right: 0;
+            border-radius: rem(10) 0 0 rem(8);
+        }
+        span:last-child {
+          border-left: 0;
+          border-radius:0 rem(8) rem(8) 0;
+        }
+          }
+
+      }
+        }
+        .mai {
+          width: 100%;
+          height: rem(124);
+          border-top: 1px solid #aca59b;
+          >button {
+              width: 100%;
+              height: 100%;
+              border: 0;
+              background: #b4272d;
+              color: #fffefb;
+              font-size: rem(43);
+          }
+          }
+      }
+  }
+
+  //  普通购买模态框
+    .moTai_putong {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        animation:  motaiK .2s forwards;
+        background: rgba(0,0,0, .3);
+
+        .general {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: #fff;
+          .motai_con {
+              width: 100%;
+              padding: rem(41);
+            p:first-child {
+              width: 100%;
+              height: rem(60);
+              span {
+                  display: block;
+                  width: rem(51);
+                  height: rem(51);
+                  border-radius: 50%;
+                  text-align: center;
+                  float: right;
+                  line-height: rem(52);
+                  color: #959595;
+                  border: 1px solid #959595;
+                  font-size: rem(32);
+                  font-weight: 700;
+              }
+          }
+       .shangpin {
+          width: 100%;
+          display: flex;
+         > dt {
+              width: rem(170);
+              height: rem(170);
+              img {
+                  width: 100%;
+                  height: 100%;
+                  border-radius: rem(10);
+              }
+          }
+         > dd {
+              padding-left: rem(40);
+              width: 80%;
+             > h5 {
+                  width: 100%;
+                  font-size: rem(34);
+                  color: #434343;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+              }
+              > span {
+                  font-size: rem(28);
+                  color: #962320;
+              }
+          }
+      }
+     	
+      .pu-xuanze {
+      		width: 100%;
+      		>dl {
+      			width:100%;
+      			dt {
+      				width: 100%;
+			        line-height: rem(94);
+			        font-size: rem(36);
+			        color: #000000;
+			        margin: rem(10) 0;
+      			}
+      			dd {
+      				display: flex;
+				    width: 100%;
+				    font-size: rem(34);
+				    flex-wrap: wrap;
+				    > span {
+				        padding: rem(21) rem(37);
+				        border-radius: rem(10);
+				        border: 1px solid #dddddd;
+				        margin: rem(10) rem(13);
+				    }
+				     .ol {
+					      border: 1px solid #962320;
+					      color: #962320;
+					    }
+      			}
+      		}
+		 
+      }
+
+      .num {
+        width: 100%;
+        display: flex;
+        margin-top: rem(109);
+        justify-content: space-between;
+        >dt {
+            font-size: rem(34);
+            color: #000;
+        }
+        >dd {
+            display: flex;
+
+            span {
+              display: block;
+              width: rem(114);
+              height: rem(93);
+              border: 1px solid #cccccc;
+              text-align: center;
+              font-size: rem(30);
+              font-weight: bold;
+              line-height: rem(93);
+          }
+          span:nth-child(2) {
+              width: rem(141);
+          }
+          span:first-child {
+              border-right: 0;
+              border-radius: rem(10) 0 0 rem(8);
+          }
+          span:last-child {
+            border-left: 0;
+            border-radius:0 rem(8) rem(8) 0;
+          }
+            }
+
+        }
+
+
+          }///
+
+          .mai {
+            width: 100%;
+            height: rem(124);
+            border-top: 1px solid #aca59b;
+            >button {
+                width: 100%;
+                height: 100%;
+                border: 0;
+                background: #b4272d;
+                color: #fffefb;
+                font-size: rem(43);
+            }
+            }
+        }
+    }
+
+  // 弹框
+  .success_tan {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      height: rem(160);
+      text-align: center;
+      font-size: rem(40);
+      z-index: 9999;
+      > span {
+          display: inline;
+          padding: rem(40);
+          border-radius: rem(10);
+          background: rgba(0,0,0, .8);
+          color: #f9fffd;
+      }
+  }
+
+}
+
+@keyframes motaiK {
+    0% { top: 100%; display: none; }
+    100%  { top: 0; display: block; }
+}

@@ -1,0 +1,122 @@
+.bio_balance {
+  width: 100%;
+}
+
+.bio_balance .balance_title {
+  width: 100%;
+  background: #a92c28;
+}
+
+.bio_balance .balance_title > h3 {
+  width: 100%;
+  line-height: 2.22222rem;
+  padding: 0.37037rem 0.38519rem;
+}
+
+.bio_balance .balance_title > h3 > span {
+  display: block;
+  width: 1.48148rem;
+  height: 1.48148rem;
+  border-radius: 50%;
+  padding: 0.1037rem;
+  border: 1px solid #f9fffd;
+}
+
+.bio_balance .balance_title > h3 > span i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 1.48148rem;
+  text-align: center;
+  color: #3d3d3d;
+  border-radius: 100%;
+  background: #f9fffd;
+}
+
+.bio_balance .balance_title .price_list {
+  width: 100%;
+  text-align: center;
+}
+
+.bio_balance .balance_title .price_list p {
+  padding-top: 1.55556rem;
+  font-size: 0.60741rem;
+  color: #e7fff8;
+  letter-spacing: 2px;
+}
+
+.bio_balance .balance_title .price_list h2 {
+  font-size: 0.91852rem;
+  padding-top: 1.00741rem;
+  color: #f8fdf9;
+}
+
+.bio_balance .balance_title .price_list span {
+  display: block;
+  width: 100%;
+  padding-top: 2.25185rem;
+  color: #e49392;
+  font-size: 0.47407rem;
+  padding-bottom: 0.93333rem;
+}
+
+.bio_balance .price_con {
+  width: 100%;
+  padding: 0 0.81481rem;
+}
+
+.bio_balance .price_con > div {
+  width: 100%;
+}
+
+.bio_balance .price_con > div p {
+  padding: 0.65185rem 0;
+  font-size: 0.5037rem;
+  color: #595959;
+}
+
+.bio_balance .price_con > div div {
+  width: 100%;
+  height: 1.77778rem;
+  line-height: 1.77778rem;
+  font-size: 0.77037rem;
+  color: #2b2b2b;
+  border-bottom: 1px solid #e6e4e4;
+}
+
+.bio_balance .price_con > div div label {
+  padding-right: 0.44444rem;
+}
+
+.bio_balance .price_con > div div input {
+  height: 100%;
+  border: 0;
+  outline: none;
+}
+
+.bio_balance .price_con > div p:last-child {
+  color: #909090;
+  font-size: 0.47407rem;
+}
+
+.bio_balance .price_con button {
+  width: 100%;
+  height: 2.07407rem;
+  display: block;
+  margin-top: 0.65185rem;
+  outline: none;
+  border-radius: 0.22222rem;
+  font-size: 0.59259rem;
+}
+
+.bio_balance .price_con button:nth-child(2) {
+  border: 0;
+  background: #b4272d;
+  color: #ffe8ef;
+}
+
+.bio_balance .price_con button:last-child {
+  background: #fff;
+  border: 1px solid #c8c8c8;
+  color: #010101;
+}

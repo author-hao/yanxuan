@@ -1,0 +1,105 @@
+@function rem($px) {
+  @return $px / 67.5 + rem;
+}
+
+.classify {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .title {
+        width: 100%;
+        height: rem(132);
+        line-height: rem(132);
+        text-align: center;
+        font-size: rem(42);
+        color: #353535;
+        position: relative;
+        span {
+            position: absolute;
+            color:#333;
+            left: rem(30);
+            top: rem(6);
+        }
+    }
+    .classify_list {
+        width: 100%;
+        flex: 1;
+        overflow: auto;
+      .like {
+          width: 100%;
+          border-top: 1px solid #eee;
+          padding-top: rem(20);
+      .rec-Sentiment_con {
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 rem(13);
+        > div {
+            width: 50%;
+            padding: 0 rem(13);
+            box-sizing: border-box;
+            margin-bottom:rem(20);
+          >a {
+              display: block;
+              width: 100%;
+            > img {
+              width: 100%;
+              margin: 0;
+              display: block;
+          }
+           }
+            > div:nth-child(2) {
+                width: 100%;
+                height: rem(104);
+                background: #f2e9e2;
+                font-size: rem(28);
+                color: #9a947e;
+                text-align: center;
+                line-height: rem(104);
+                margin-top: rem(-5);
+                margin-bottom: rem(20);
+            }
+
+            p:nth-child(3) {
+                width: 100%;
+                font-size: rem(40);
+                white-space: nowrap;
+                text-overflow:ellipsis;
+                overflow:hidden;
+                padding-right: rem(13);
+            }
+            div:last-child {
+                width: 100%;
+                padding-top: rem(10);
+                display: flex;
+                font-size: rem(30);
+                justify-content: space-between;
+                span {
+                  color: #9d3631;
+                  margin: 0 rem(13);
+              }
+              i {
+                  display: block;
+                  font-style: normal;
+                  color: rgb(165, 159, 159);
+              }
+            }
+
+
+        }
+    }
+    // 没有商品显示状态
+    .kong_di {
+
+        font-size: rem(50);
+        p {
+            text-align: center;
+            line-height: rem(800);
+            color: #999;
+        }
+    }
+    }
+    }
+}
