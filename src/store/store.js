@@ -134,7 +134,18 @@ const Store = new Vuex.Store({
     // state.listData = i
     },
     kanjiaData (state, data) { // 砍价数据
+      console.log(data)
       state.kanjiaId = data
+    },
+    delData (state, id) { // 单行删除
+      state.listData = state.listData.filter(i => {
+        return i.id !== id
+      })
+      let Num = 0
+      state.listData.forEach(ii => { // 重新计算数量
+        Num += ii.number
+      })
+      state.cart_count = Num
     }
 
   }

@@ -32,10 +32,9 @@ export default {
             console.log(data)
             var reg = /^1[3|4|5|7|8|9][0-9]{9}$/ // 手机号验证规则
             if (data.code === 0) {
-            // console.log(data.data.token)
             this.$cookie.set('token', data.data.token, 30)
-            setCookie('token', data.data.token, 30)
-            setCookie('user', this.user)
+            // setCookie('token', data.data.token, 30)
+            setCookie('user', this.user, 30)
              this.$router.push('/')
           } else if (!reg.test(this.user)) {
             alert('请输入正确手机号')

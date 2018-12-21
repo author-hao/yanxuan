@@ -85,8 +85,7 @@ export default {
       this.isShow = false
     },
     go_kanjia () { // 进入砍价页面
-      let list = Object.assign( this.deatil_data, this.kanjiaPrice)
-      console.log(list)
+      let list = Object.assign(this.deatil_data, this.kanjiaPrice)
       this.$store.commit('kanjiaData', list)
       this.$router.replace('/kanjiaDetail')
     },
@@ -134,7 +133,7 @@ export default {
     	  let aa = data.data.result.filter(i => {
     		  return  i.goodsId == id
         })
-        // this.kanjiaPrice = JSON.parse(JSON.stringify(aa).replace(/\[|]/g,'')) // 正则去掉数组中括号 []
+        this.kanjiaPrice = JSON.parse(JSON.stringify(aa).replace(/\[|]/g,'')) // 正则去掉数组中括号 []
          console.log(this.kanjiaPrice)
     	}
    })

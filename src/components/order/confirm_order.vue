@@ -112,7 +112,7 @@ export default {
       this.$http.post(global.data.api + '/order/create',
         'token=' + this.token +
       '&goodsJsonStr=' + JSON.stringify(this.createOrder) +
-      '&expireMinutes=2'
+      '&expireMinutes=600'
       ).then(res => {
         let { data } = res
         console.log(data)

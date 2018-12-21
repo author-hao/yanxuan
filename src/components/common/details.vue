@@ -524,6 +524,7 @@ export default {
         }, 1000)
         return false
       } else if (this.getId !== '') {
+
         console.log(this.getId + ':' + this.properties[0].id)
         let query = new URLSearchParams()
         query.append('goodsId', this.deatil_data.id)

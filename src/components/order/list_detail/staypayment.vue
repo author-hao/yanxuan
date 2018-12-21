@@ -12,13 +12,12 @@
               <li>订单号：{{ i.orderNumber }}</li>
               <li>
                   <div>
-                      <img src='../../../../static/images/img_06.png' alt='' />
-                      <img src='../../../../static/images/img_04.png' alt='' />
+                      <img v-for='(a, j) in noPayimg[i.id]' :key='j' :src='a.pic' alt='' />
                   </div>
               </li>
               <li>
                   <span>合计：{{ i.amount }}</span>
-                  <p><button @click='outorder(i.id)'>取消订单</button> <button>立即支付</button></p>
+                  <p><button @click='outorder(i.id)'>取消订单</button> <button @click='go_payment(i)'>立即支付</button></p>
               </li>
           </ul>
         </div>
@@ -86,6 +85,9 @@ export default {
           this.noPayimg = data.data.goodsMap
         }
       })
+    },
+    go_payment(item) {
+      console.log(item)
     }
   }
 }

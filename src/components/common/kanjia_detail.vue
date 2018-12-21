@@ -86,20 +86,20 @@ export default {
 	    })
       },
       upkanjia (id) { // 自己先砍一刀
-      	console.log(this.myData)
       	this.$http.post(global.data.api + '/shop/goods/kanjia/join',
           'kjid=' + id +
           '&token=' + this.$cookie.get('token')
         ).then(res => {
-        console.log(res)
+        console.log(res.data)
         let { data } = res
         if (data.code === 0) {
 			this.isUser = data.data.helpNumber
 			this.uid = data.data.uid
 			this.num = (this.myData.originalPrice - data.data.curPrice).toFixed(2)
-			this.kanjia_dao()
+			this.isUser = 1
+			console.log(this.myData.originalPrice, data.data.curPrice)
 			let ti = 3 * 24 * 60 * 60
-			setInterval (() => { // 砍价倒计时
+			let clert = setInterval (() => { // 砍价倒计时
 				ti --
 			  	let shi = parseInt(ti/60/60)
 				let fen = parseInt(ti/60/24/3)
@@ -108,26 +108,27 @@ export default {
 				fen < 10 ? '0' + fen : fen
 				miao < 10 ? '0' + miao : miao
 				this.time = shi
-				this.time2 = fen 
+				this.time2 = fen
 				this.time3 = miao
+				if (shi<=0) {
+					clearInterval(clert)
+				}
 			}, 1000)
-          }
+           }
          })
       },
       kanjia_dao () { // 获取砍价详情
       	this.$http.post(global.data.api + '/shop/goods/kanjia/info', 'kjid=' + this.myData.id + '&joiner=' + this.uid).then(res => {
-      		console.log(res)
-      		let { data } = res
+			  let { data } = res
+			  console.log(data)
       		if(data.code === 0) {
-      			this.helps = data.data.helps
+				this.helps = data.data.kanjiaInfo
       		}
       	})
       }
   	},
   	mounted () {
-  		console.log(this.myData)
   		let token = this.$cookie.get('token')
-  		console.log(token)
   		this.$http.post(global.data.api + '/shop/goods/kanjia/my', 'token=' + token + '&kjid=' + this.myData.id ).then(res => {
   			let { data } = res
   			console.log(data)

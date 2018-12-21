@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/views/goods/index'
-import List from '@/components/center/list'
+
 import Theme from '@/components/center/theme'
 import Classification from '@/views/sort/classification'
-import Cart from '@/views/shopping/cart'
+
 import PersonalData from '@/views/bio/personalData'
 import Details from '@/components/common/details'
 import BargainDetail from '@/components/common/bargain_detail'
@@ -33,29 +33,30 @@ import BioKanjia from '@/components/bio_resources/bio_kanjia'
 
 Vue.use(Router)
 const router = new Router({
-  mode: 'history',
   routes: [
     {
       path: '/',
       component: Index,
       children: [
         {
-          path: '/', // 首页列表
-          component: List,
-          meta: { title: '首页' }
+          path: '', // 首页列表
+          component: () => import('@/components/center/list'), // 这里是为了路由的懒加载用的
+          meta: { title: '首页', num: 1 }
         },
         {
           path: '/classification', // 分类
           component: Classification,
-          meta: { title: '分类' }
+          meta: { title: '分类', num: 2 }
         },
         {
           path: '/cart', // 购物车
-          component: Cart
+          component: resolve => require(['@/views/shopping/cart'], resolve), // 这里是为了路由的懒加载用的
+          meta: { title: '购物车', num: 3 }
         },
         {
           path: '/personal', // 个人中心
-          component: PersonalData
+          component: PersonalData,
+          meta: { title: '个人中心', num: 4 }
         }
       ]
     },

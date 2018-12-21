@@ -929,13 +929,14 @@
         z-index: 100;
         animation:  motaiK .2s forwards;
         background: rgba(0,0,0, .3);
-
+        
         .general {
             width: 100%;
             position: absolute;
             left: 0;
             bottom: 0;
             background: #fff;
+            transform: translate3d(0, 0, 20%);
           .motai_con {
               width: 100%;
               padding: rem(41);
@@ -1055,7 +1056,7 @@
         }
 
 
-          }///
+          }//
 
           .mai {
             width: 100%;

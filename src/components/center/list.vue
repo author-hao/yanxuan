@@ -1,6 +1,9 @@
 <template>
   <section class='wrapper' ref="wrapper">
   <div class="list content" >
+      <div class='list_top' v-if='dropDown'>
+        <span>{{ Onload }}</span>
+    </div>
       <!-- 轮播图 -->
       <Shuffling class="lun"/>
 
@@ -90,6 +93,7 @@
 import Shuffling from './shuffling'
 import BScroll from 'better-scroll'
 import { getCookie } from '@/components/util/cookie.js'
+import { setTimeout } from 'timers';
 
 export default {
   components: {
@@ -97,6 +101,8 @@ export default {
   },
   data () {
     return {
+      Onload: '',
+      dropDown: false,
       listData: [],
       kanjia: [], // 砍价
       tuijian: [], // 推荐
@@ -130,7 +136,7 @@ export default {
         query: { id: id }
       })
     },
-    Scrollbar () { 
+    Scrollbar () {
       let Zhuti = document.getElementsByClassName('zhuti')[0]
       Zhuti.scroll = new BScroll(this.$refs.zhuti, {
         scrollY: false,
@@ -138,24 +144,39 @@ export default {
         click: true,
         probeType: 2, // 派发滚动事件
         bounce: { // 当滚动超过边缘的时候会有一小段回弹动画, false关闭
-          left: false,
+          left: true,
           right: false
         }
       })
       this.scroll = new BScroll(this.$refs.wrapper, {
 	    scrollY: true, // 纵向滚动
-	    click: true,
-	    probeType: 2 // 派发滚动事件
-	  })
-	  this.scroll.on('touchEnd', (pos) => {
-	    if (this.scroll.y <= this.scroll.maxScrollY) {
-	      this.scroll.refresh()
-	    }
-	  })
-    }
-  },
-  mounted () { // 获取砍价的商品
-    this.$http.get(global.data.api + '/shop/goods/list').then(res => {
+        click: true,
+        momentumLimitDistance: 0,
+        bounceTime: 100,
+        probeType: 2, // 派发滚动事件
+      })
+      this.scroll.on('scroll', (pos) => {
+          if (pos.y > 1) {
+              this.Onload = '释放立即刷新'
+              this.dropDown = true
+          }
+      })
+      this.scroll.on('touchEnd', (pos) => {
+           if (pos.y > 30) {
+               this.Onload = '正在加载中。。。'
+           }
+           setTimeout (() => {
+               this.getData()
+               this.Onload = '刷新成功'
+               setTimeout (() => {
+                 this.dropDown = false
+               }, 1000)
+             
+           }, 1000)
+        })
+    },
+    getData () { // 获取砍价的商品
+        this.$http.get(global.data.api + '/shop/goods/list').then(res => {
       let { data } = res
       if (data.code === 0) {
         this.listData = data.data
@@ -174,6 +195,10 @@ export default {
         }, 20)
       })
     })
+    }
+  },
+  mounted () {
+    this.getData()
   },
   beforeRouteLeave (to, from, next) {
     let token = getCookie('token')
@@ -197,9 +222,26 @@ export default {
   .list {
       width: 100%;
       background: #e2e1e1;
+
+    .list_top {
+        width: 100%;
+        height: rem(200);
+        font-size: rem(30);
+        text-align: center;
+        transform: translate3d(0, -100, 0);
+        
+        span {
+            display: block;
+            width: 100%;
+            line-height: rem(200);
+            color: #666;
+        }
+    }
+
+
     .lun {
         z-index: 2;
-         height: rem(400);
+         min-height: rem(300);
     }
       .section {
           width: 100%;
@@ -296,7 +338,13 @@ export default {
                           }
                           >span {
                               font-size: rem(22);
+                              width: 100%;
                               color: #9d9d9d;
+                              display: block;
+                              white-space: nowrap;
+                              padding-right: rem(20);
+                              overflow: hidden;
+                              text-overflow: ellipsis;
                           }
                           ul {
                               display: flex;

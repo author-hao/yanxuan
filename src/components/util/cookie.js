@@ -49,10 +49,12 @@ export function getCookie (cname) {
 
 // 设置cookie,增加到vue实例方便全局调用
 export function setCookie (name, value, expiredays) {
+  expiredays = expiredays || 1
   var exdate = new Date()
-  let a = exdate.setTime(exdate.getTime() + (expiredays * 1000 * 60 * 60 * 24))
-  console.log(a, expiredays * 1000 * 60 * 60 * 24)
+  exdate.setTime(exdate.getTime() + (expiredays * 24 * 60 * 60 * 1000))
+  console.log(exdate.toGMTString())
   document.cookie = name + '=' + escape(value) + ((expiredays == null) ? '' : ';expires=' + exdate.toGMTString()) + '; path=/'
+  console.log(document.cookie)
 };
 
 // 获取 cookie

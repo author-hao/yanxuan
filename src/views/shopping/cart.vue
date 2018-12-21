@@ -12,7 +12,12 @@
               </div>
             <!-- 购物车 -->
             <section class="cart_list">
-                <dl v-for='(item, i) in cart_data' :key='i' >
+                <dl :style="transitionAll" v-for='(item, i) in cart_data' :key='item.id' 
+                      @touchstart='leftStart($event)'
+                      @touchmove='touchMove($event, i)'
+                      @touchend='touchEnd($event, i)'
+                      ref='dll'>
+                      
                     <dt @click='checkbox(item.id)'>
                         <span>
                             <i :class="{'check':item.paixu }"></i>
@@ -28,6 +33,9 @@
                             <span>{{ item.number }}</span>
                             <span @click='adds(item.id)'>+</span>
                         </div>
+                    </dd>
+                    <dd class='remove' ref='remove' @click='Delete(item.id)'>
+                      删除
                     </dd>
                 </dl>
             </section>
@@ -78,9 +86,13 @@ import BScroll from 'better-scroll'
 export default {
   data () {
     return {
-      isShow: false,
-      updelete: false,
-      common_list: []
+      isShow: false, // 全选的定义
+      updelete: false, // 下单和删除 切换
+      common_list: [], // 渲染的购物车数据
+      startX: 0, // 手指的起始点击位置坐标
+      disX: 0, // 接受x 轴 的滑动多少距离
+      endX: 0, // 手指的滑动结束位置
+      transitionAll: '' // 绑定style 实现滑动效果
     }
   },
   computed: {
@@ -141,7 +153,6 @@ export default {
       this.$store.commit('create_order')
     },
     adds (id) { // 数量加加
-      console.log(id)
       this.$store.commit('add', id)
     },
     odds (id) { // 数量减减
@@ -155,17 +166,63 @@ export default {
     checkedAll (bool) { // 全选
       this.$store.commit('checkedA', bool)
     },
-    delList () {
+    delList () { // 选中删除
       this.$store.commit('delete')
       if (this.cart_data.length === 0) this.isShow = false
     },
-	ScrollBar () {
+	ScrollBar () { // 上下滑动
     this.scroll = new BScroll(this.$refs.myCart, {
         scrollY: true,
         tap: true,
         click: true,
     })
-	}
+  },
+  leftStart(ev) { // 单个手指按下事件
+     ev = ev || event
+      //touches类数组，等于1时表示此时有只有一只手指在触摸屏幕
+    if (ev.touches.length === 1) {
+        // this.startX 记录开始位置
+      this.startX = ev.touches[0].clientX
+    }
+  },
+  touchMove (ev, i) {
+    ev = ev || event;
+    let del = this.$refs.dll
+    let wd=this.$refs.remove[i].offsetWidth
+    for (let j=0;ev.changedTouches[j] != undefined; j++) {
+      let endX = ev.changedTouches[j].clientX;
+      this.disX = this.startX - endX;
+         //如果距离小于删除按钮一半,强行回到起点
+        if (this.disX < 0) {
+          del[i].style = "transition:all .2s ease-in-out;transform:translateX(0px)";
+        }else if (this.disX > 30) {
+          //大于一半 滑动到最大值
+          del[i].style = "transition:all 250ms ease-in-out;transform:translateX(-"+this.disX+ "px)";
+          if (this.disX >= wd) {
+             del[i].style = "transition:all 250ms ease-in-out;transform:translateX(-"+wd+ "px)";
+          }     
+      }
+    }    
+  },
+  touchEnd (ev, i) { // 结束事件触发
+    ev = ev || event;
+    let del = this.$refs.dll
+    let wd=this.$refs.remove[i].offsetWidth
+    for (let j=0;ev.changedTouches[j] != undefined; j++) {
+      let endX = ev.changedTouches[j].clientX;
+      this.disX = this.startX - endX;
+         //如果距离小于删除按钮一半,强行回到起点
+        if ((this.disX) < (wd/2)) {
+          del[i].style = "transition:all .2s ease-in-out;transform:translateX(0px)";
+        }else if (this.disX > 30) {
+          //大于一半 滑动到最大值
+          del[i].style = "transition:all 250ms ease-in-out;transform:translateX(-"+wd+ "px)";
+      }
+    }    
+  },
+  Delete (id) { // 左滑动删除事件
+    this.$store.commit('delData', id)
+  }
 
   },
   watch: { // 监听 CheckBox

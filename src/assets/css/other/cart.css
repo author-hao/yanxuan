@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .cart {
   width: 100%;
   height: 100%;
@@ -50,6 +51,7 @@
 .cart .myCart .wapper > .my_list .empty img {
   margin-top: 2.22222rem;
   width: 3.7037rem;
+  background: #fff;
 }
 
 .cart .myCart .wapper > .my_list .empty p {
@@ -67,17 +69,21 @@
 
 .cart .myCart .wapper > .my_list .cart_list {
   width: 100%;
+  overflow: hidden;
 }
 
 .cart .myCart .wapper > .my_list .cart_list dl {
-  width: 100%;
+  width: 115%;
+  height: 4.88889rem;
   display: flex;
-  padding: 0.59259rem 0;
   border-bottom: 1px solid #ebe3e3;
+  /*适应苹果*/
+  -webkit-overflow-scrolling: touch;
 }
 
 .cart .myCart .wapper > .my_list .cart_list dl dt {
   width: 41%;
+  padding: 0.59259rem 0;
 }
 
 .cart .myCart .wapper > .my_list .cart_list dl dt span {
@@ -109,35 +115,36 @@
   height: 3.40741rem;
 }
 
-.cart .myCart .wapper > .my_list .cart_list dl dd {
+.cart .myCart .wapper > .my_list .cart_list dl dd:nth-child(2) {
   width: 59%;
   display: flex;
+  padding: 0.59259rem 0;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
 }
 
-.cart .myCart .wapper > .my_list .cart_list dl dd h3 {
+.cart .myCart .wapper > .my_list .cart_list dl dd:nth-child(2) h3 {
   font-size: 0.53333rem;
   color: #000;
   padding-top: 0.20741rem;
 }
 
-.cart .myCart .wapper > .my_list .cart_list dl dd > span {
+.cart .myCart .wapper > .my_list .cart_list dl dd:nth-child(2) > span {
   color: #b5272d;
   font-size: 0.44444rem;
   margin-bottom: 0.45926rem;
   font-weight: bold;
 }
 
-.cart .myCart .wapper > .my_list .cart_list dl dd .operation {
+.cart .myCart .wapper > .my_list .cart_list dl dd:nth-child(2) .operation {
   position: absolute;
-  bottom: 0;
+  bottom: 0.59259rem;
   right: 0.66667rem;
   display: flex;
 }
 
-.cart .myCart .wapper > .my_list .cart_list dl dd .operation span {
+.cart .myCart .wapper > .my_list .cart_list dl dd:nth-child(2) .operation span {
   display: block;
   width: 1.03704rem;
   height: 1.11111rem;
@@ -148,22 +155,32 @@
   line-height: 1.03704rem;
 }
 
-.cart .myCart .wapper > .my_list .cart_list dl dd .operation span:nth-child(2) {
+.cart .myCart .wapper > .my_list .cart_list dl dd:nth-child(2) .operation span:nth-child(2) {
   width: 1.34815rem;
 }
 
-.cart .myCart .wapper > .my_list .cart_list dl dd .operation span:first-child {
+.cart .myCart .wapper > .my_list .cart_list dl dd:nth-child(2) .operation span:first-child {
   border-right: 0;
   border-radius: 0.11852rem 0 0 0.11852rem;
 }
 
-.cart .myCart .wapper > .my_list .cart_list dl dd .operation span:last-child {
+.cart .myCart .wapper > .my_list .cart_list dl dd:nth-child(2) .operation span:last-child {
   border-left: 0;
   border-radius: 0 0.11852rem 0.11852rem 0;
 }
 
-.cart .myCart .wapper > .my_list .cart_list dl dd .operation .reduce {
+.cart .myCart .wapper > .my_list .cart_list dl dd:nth-child(2) .operation .reduce {
   border: 1px solid #eee;
+}
+
+.cart .myCart .wapper > .my_list .cart_list dl dd:last-child {
+  width: 2.66667rem;
+  height: 100%;
+  line-height: 4.44444rem;
+  background: #ce0d0d;
+  font-size: 0.59259rem;
+  color: #fff;
+  text-align: center;
 }
 
 .cart .myCart .wapper > .my_list h2 {

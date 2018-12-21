@@ -1,6 +1,6 @@
 <template>
   <div class="swiper-container banner">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper" >
             <div v-for='(item, i) in banner_list' :key='i' class="swiper-slide">
                 <router-link :to="{ path: '/details', query: {id: 99765}}">
                   <img :src='item.picUrl' alt="图片加载失败">
@@ -8,7 +8,7 @@
             </div>
         </div>
         <!-- 如果需要分页器 -->
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination" id='pagination'></div>
 
         <!-- 如果需要导航按钮 -->
         <!-- <div class="swiper-button-prev"></div>
@@ -61,7 +61,6 @@ export default {
         this.$nextTick(() => {
           this.initSwiper()
         })
-        // console.log(data)
       }
     })
   }
@@ -72,7 +71,7 @@ export default {
 @function rem($px) {
   @return $px / 46.875 + rem;
 }
-  .swiper-container {
+  .banner {
       width: 100%;
       margin: 0;
           .swiper-wrapper {
@@ -84,7 +83,7 @@ export default {
                   margin: 0;
                  a > img {
                       width: 100%;
-                      height: rem(400);
+                      min-height: rem(300);
                       margin: 0;
                       padding: 0;
                   }
@@ -93,6 +92,6 @@ export default {
            .swiper-pagination-bullets {
               bottom: rem(40);
           }
+         
       }
-
 </style>

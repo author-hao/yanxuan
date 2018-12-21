@@ -36,7 +36,8 @@ export default {
     })
     this.$nextTick(() => {
       this.scrill = new BScroll(this.$refs.themeDetail_wapper, {
-        click: true
+        click: true,
+        cancelable: false
       })
     })
   },
